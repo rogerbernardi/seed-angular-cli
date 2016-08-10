@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>AngularCli</title>
+  <base href="/">
+
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <link rel="stylesheet" href="vendor/font-awesome/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="vendor/bootstrap/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="vendor/fuel-ui/bundles/fuel-ui.min.css" />
+ 
+  {{#unless environment.production}}
+  <script src="/ember-cli-live-reload.js" type="text/javascript"></script>
+  {{/unless}}
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body>
+  <app-root>Loading...</app-root>
+  
+    {{#each scripts.polyfills}}
+    <script src="{{.}}"></script>
+    {{/each}}
+    <script>
+      System.import('system-config.js').then(function () {
+        System.import('main');
+      }).catch(console.error.bind(console));
+    </script>
+    
+<script src="https://www.gstatic.com/firebasejs/3.2.1/firebase.js"></script>
+<script>
+  // Initialize Firebas eexample db - Please create new db and get the codes at https://console.firebase.google.com/
+  var config = {
+    apiKey: "AIzaSyCtjfa9ZGTlRXwLfdM8i3whpCIrBRa-tEM",
+    authDomain: "synthetic-verve-135919.firebaseapp.com",
+    databaseURL: "https://synthetic-verve-135919.firebaseio.com",
+    storageBucket: "synthetic-verve-135919.appspot.com",
+  };
+  firebase.initializeApp(config);
+</script>
+    
+<script src="vendor/fuel-ui/bundles/fuel-ui.min.js"></script>
+
+</body>
+</html>
