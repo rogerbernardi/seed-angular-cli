@@ -28,7 +28,7 @@ Do not forget to set a new firebase database and change the /src/index.html to a
 
 `git clone https://github.com/rogerbernardi/seed-angular-cli.git`
 
-`cd seed-angular-cli`
+`cd seed-angular-cli/angular-cli/`
 
 `npm install`
 
